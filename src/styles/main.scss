@@ -1,5 +1,52 @@
-$bgColor: rgb(20, 140, 191);
+@use 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bgColor: #03064B;
+$titleColor: #ddd1a9;
+$textColor: #f9f9f9;
+$secondaryTextColor: #c0c0c0;
+$buttonColor: #E2B616;
 
 body {
     background-color: $bgColor;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: 1.6;
+    color: $textColor;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: $titleColor;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
+}
+
+.title--big {
+    @include title(44px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
 }
