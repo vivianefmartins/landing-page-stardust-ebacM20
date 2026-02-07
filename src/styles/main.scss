@@ -3,6 +3,8 @@
 @use 'about';
 @use 'movies';
 @use 'knowledge';
+@use 'footer';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -41,6 +43,10 @@ body {
 
 .text--big {
     @include text(18px);
+
+    @media (max-width: 768px) {
+        @include text(14px)
+    }
 }
 
 .text {
@@ -53,6 +59,10 @@ body {
 
 .title--big {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(24px)
+    }
 }
 
 .title {
@@ -61,4 +71,8 @@ body {
 
 .title--small {
     @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(20px)
+    }
 }
